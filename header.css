@@ -4,13 +4,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 180px; /* taas ng header */
+  height: 180px; 
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 10;
 
-  /* ---- Gradient fade sa mismong bottom ng header ---- */
+
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
@@ -25,10 +25,10 @@
 
 .header {
     position: fixed;
-    top: 20px;          /* space from top */
+    top: 20px;         
     left: 50%;
     transform: translateX(-50%);
-    width: 1400px; /* full width minus left+right space */
+    width: 1400px; 
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@
 .l-section {
     display: flex;
     align-items: center;
-    gap: 12px; /* space between profile pic and text */
+    gap: 12px; 
 }
 
 .student_name {
@@ -209,7 +209,7 @@
 .profile-initial-circle {
     width: 100px;
     height: 100px;
-    background-color: #000000; /* or your theme color */
+    background-color: #000000; 
     color: white;
     border-radius: 50%;
     display: flex;

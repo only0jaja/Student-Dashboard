@@ -415,21 +415,132 @@ body {
 }
 
 /* --------------- Books and Library Points ---------------*/
-
-.bottom-boxes {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.library-widgets {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
 }
-.box {
-  border: 2px solid var(--black);
-  height: 240px;
+
+/* General Widget Styles */
+.widget {
+  position: relative;
+  width: 530px;
+  height: 247px; /* fixed height for scrollable effect */
+  background: #fff;
   border-radius: 10px;
-  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.box h3 {
-  margin: 0;
+/* Header */
+.widget .header-box {
+  width: 100%;
+  background: #0157AE;
+  color: #FFD700;
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 10px 0;
   text-align: center;
 }
 
+/* Borrowed Books Column */
+.borrowed .content {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  overflow-y: auto; 
+  max-height: 180px; 
+}
+
+
+/* Individual Book Card (Horizontal) */
+.book-card {
+  background: #fff;
+  border: 2px solid #0157AE;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 10px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.book-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0C1E33;
+}
+
+.book-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.book-status.not-submitted {
+  background: #FFEBDB;
+  color: #F2994A;
+}
+
+.book-status.submitted {
+  background: #DFF2E1;
+  color: #27AE60;
+}
+
+.book-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: right;
+}
+
+.book-dates span {
+  font-size: 10px;
+  font-weight: 400;
+  color: #0C1E33;
+}
+
+/* Library Points */
+.points .content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.points-circle {
+  width: 120px;
+  height: 120px;
+  background: #0157AE;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.points-number {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.points-label {
+  font-size: 16px;
+  font-weight: 800;
+}

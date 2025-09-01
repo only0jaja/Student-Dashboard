@@ -49,7 +49,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 160px; 
+  height: 170px; 
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -111,7 +111,6 @@ body {
     text-decoration: none;
     
 }
-
 
 .profile-pic-header {
     width: 40px;
@@ -272,10 +271,6 @@ body {
     z-index: 20;
 
 }
-   
-
-
-
 
 /* === Dashboard layout === */
 .dashboard {

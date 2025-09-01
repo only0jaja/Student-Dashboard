@@ -1,0 +1,541 @@
+
+:root {
+    /* ================== Font Family ================== */
+    --font-primary: 'Poppins', sans-serif;
+
+    /* === Font Sizes === */
+    --fs-xs: 12px;
+    --fs-sm: 14px;
+    --fs-base: 16px;
+    --fs-md: 18px;
+    --fs-lg: 24px;
+    --fs-xlg: 28px;
+    --fs-xl: 32px;
+
+    /* ==== Font Weights === */
+    --fw-thin: 100;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+
+    /* === Colors === */
+    --black: #000000;
+    --blue: #0157AE;
+    --dark-gray: #1A1A1A;
+    --white: #FFFFFF;
+    --yellow: #FFD700;
+    --cyan-blue: #00B3FF;
+}
+
+/* === Global styles === */
+body {
+  background-color: var(--white);
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+*.main_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170px; 
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 5;
+
+/*
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 87%, rgba(0,0,0,0) 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+*/
+}
+
+
+
+
+.header {
+    position: fixed;
+    top: 20px;         
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1400px; 
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-radius: 30px;
+    background-color: var(--blue);
+    box-sizing: border-box;
+}
+
+/* --------LEFT SECTION-------- */
+.l-section {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+.student_name {
+    font-size: 28px;
+    font-weight: var(--fw-extrabold);
+    color: var(--white);
+    text-decoration: none;
+    
+}
+.student-name{
+    display: flex;
+    flex-direction: column;
+}
+
+.student_id {
+    font-size: 20px;
+    font-weight: var(--fw-extrabold);
+    color: var(--white);
+    text-decoration: none;
+    
+}
+
+.profile-pic-header {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    z-index: 20;
+}
+.profile-initial-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #000000; 
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 20;
+}
+/* --------RIGHT SECTION-------- */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+    border: none;
+    width: 400px;   
+    max-width: 100%;
+    padding: 5px;   
+    box-sizing: border-box;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.search-bar button {
+    border: none;
+    width: 45px;       
+    height: 45px;
+    margin-left: 8px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--blue);
+    font-size: 20px;   
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+/* ===  Settings dropdown === */
+.account-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.account-dropdown-content {
+    opacity: 0;
+    border-radius: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: 40px;
+    left: -38px;
+    padding: 20px 0 10px 0;
+    width: 120px;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+    transform: translateY(-20px);
+    z-index: 10;
+    overflow: hidden;
+}
+
+.account-dropdown:hover .account-dropdown-content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    
+}   
+.account-dropdown-content a:hover{
+    background: #007bff;
+    color: var(--yellow);
+    width: 100%;
+}
+
+.account-dropdown-content a {
+    color: var(--white);
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: var(--font-primary);
+    font-weight: var(--fw-semibold);
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.account-dropdown-content a:hover::after {
+    width: 100%;
+}
+
+/* Hide logout link when not logged in */
+.account-dropdown-content .logout {
+    display: block;
+}
+.account-dropdown-content .login {
+    display: none;
+}
+
+/* Show login link when not logged in */
+.account-dropdown-content.logged-out .logout {
+    display: none;
+}
+.account-dropdown-content.logged-out .login {
+    display: block;
+}
+
+
+.settings{
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 20;
+
+}
+
+/* === Dashboard layout === */
+.dashboard {
+  background-color: var(--white);
+  margin-top: 180px;
+  width: 1400px;
+  height: auto;
+  border: 2px solid white;
+
+  display: grid;
+  grid-template-columns: 250px 1fr; 
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 250px;
+  background-color: var(--blue);
+  color: var(--black);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 900px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.side-menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  margin: 5px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.side-menu a i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.side-menu a:hover {
+  background: #007bff;
+  color: var(--yellow);
+}
+
+.filter-apply-btn {
+  font-size: var(--fs-sm);
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.filter-apply-btn:hover {
+  background-color: #00bcd4cc; 
+  border: none;
+  
+}
+
+/* --------------- MAIN SECTION ---------------*/
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --------------- Schedule ---------------*/
+
+.schedule-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 100%;
+      overflow: hidden;
+      height: 390px;
+}
+
+.schedule-header {
+    background: #0157AE;
+    color: #FFD700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.schedule-header .view-all {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.schedule-table-container {
+    max-height: 330px; 
+    overflow-y: auto; 
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-y: auto;
+}
+
+.schedule-table th, .schedule-table td {
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 13px;
+    color: #0C1E33;
+}
+
+.schedule-table th {
+    color: #495D72;
+    font-weight: 600;
+    background: #f9fafb;
+}
+
+.schedule-table tr:nth-child(even) td {
+    background: #F4F6F7;
+}
+
+/* --------------- Books and Library Points ---------------*/
+.library-widgets {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* General Widget Styles */
+.widget {
+  position: relative;
+  width: 530px;
+  height: 247px; /* fixed height for scrollable effect */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.widget .header-box {
+  width: 100%;
+  background: #0157AE;
+  color: #FFD700;
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Borrowed Books Column */
+.borrowed .content {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  overflow-y: auto; 
+  max-height: 180px; 
+}
+
+
+/* Individual Book Card (Horizontal) */
+.book-card {
+  background: #fff;
+  border: 2px solid #0157AE;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 10px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.book-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0C1E33;
+}
+
+.book-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.book-status.not-submitted {
+  background: #FFEBDB;
+  color: #F2994A;
+}
+
+.book-status.submitted {
+  background: #DFF2E1;
+  color: #27AE60;
+}
+
+.book-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: right;
+}
+
+.book-dates span {
+  font-size: 10px;
+  font-weight: 400;
+  color: #0C1E33;
+}
+
+/* Library Points */
+.points .content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.points-circle {
+  width: 120px;
+  height: 120px;
+  background: #0157AE;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.points-number {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.points-label {
+  font-size: 16px;
+  font-weight: 800;
+}

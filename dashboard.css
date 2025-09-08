@@ -611,6 +611,9 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+    .side-menu a {
+    font-size: 12px;
+    }
 }
 
 /* Big phones */
@@ -735,3 +738,4 @@ body {
         font-size: 11px;
     }
 }
+

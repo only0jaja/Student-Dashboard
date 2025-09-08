@@ -539,3 +539,94 @@ body {
   font-size: 16px;
   font-weight: 800;
 }
+/* ====== RESPONSIVE ====== */
+/* Laptop */
+@media (max-width: 1200px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        max-width: 100%;
+    }
+
+    .library-widgets {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .widget {
+        max-width: 100%;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .header {
+        padding: 15px;
+    }
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}
+
+/* Big phone */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .student_name,
+    .student_id {
+        font-size: 18px;
+    }
+
+    .profile-initial-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 16px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .student_name,
+    .student_id {
+        font-size: 14px;
+    }
+
+    .profile-initial-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .schedule-table {
+        min-width: 500px;
+    }
+}
+
+/* === Extra space above sidebar menu === */
+.sidebar .filter-section {
+    padding-top: 25px;
+}
+
+@media (max-width: 768px) {
+    .sidebar .filter-section {
+        padding-top: 35px;
+    }
+}

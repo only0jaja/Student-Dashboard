@@ -1,7 +1,7 @@
+
 :root {
     /* ================== Font Family ================== */
     --font-primary: 'Poppins', sans-serif;
-
     /* === Font Sizes === */
     --fs-xs: 12px;
     --fs-sm: 14px;
@@ -10,7 +10,6 @@
     --fs-lg: 24px;
     --fs-xlg: 28px;
     --fs-xl: 32px;
-
     /* ==== Font Weights === */
     --fw-thin: 100;
     --fw-light: 300;
@@ -20,7 +19,6 @@
     --fw-bold: 700;
     --fw-extrabold: 800;
     --fw-black: 900;
-
     /* === Colors === */
     --black: #000000;
     --blue: #0157AE;
@@ -70,7 +68,6 @@ body {
     background-color: var(--blue);
     box-sizing: border-box;
 }
-
 /* --------LEFT SECTION-------- */
 .l-section {
     display: flex;
@@ -89,7 +86,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 .student_id {
     font-size: 20px;
     font-weight: var(--fw-extrabold);
@@ -131,7 +127,6 @@ body {
     align-items: center;
     gap: 50px;
 }
-
 .search-bar {
     display: flex;
     align-items: center;
@@ -167,12 +162,10 @@ body {
     background: transparent;
     transition: background 0.3s ease, color 0.3s ease;
 }
-
 .search-bar button:hover {
     background: var(--blue);
     color: var(--white);
 }
-
 /* ===  Settings dropdown === */
 .account-dropdown {
     position: relative;
@@ -200,7 +193,6 @@ body {
     z-index: 10;
     overflow: hidden;
 }
-
 .account-dropdown:hover .account-dropdown-content {
     opacity: 1;
     pointer-events: auto;
@@ -212,7 +204,6 @@ body {
     color: var(--yellow);
     width: 100%;
 }
-
 .account-dropdown-content a {
     color: var(--white);
     padding: 8px 16px;
@@ -225,7 +216,6 @@ body {
     position: relative;
     transition: color 0.3s ease;
 }
-
 .account-dropdown-content a:hover::after {
     width: 100%;
 }
@@ -361,7 +351,6 @@ body {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-
 .schedule-header .view-all {
     font-size: 14px;
     font-weight: 600;
@@ -390,13 +379,11 @@ body {
     font-size: 13px;
     color: #0C1E33;
 }
-
 .schedule-table th {
     color: #495D72;
     font-weight: 600;
     background: #f9fafb;
 }
-
 .schedule-table tr:nth-child(even) td {
     background: #F4F6F7;
 }
@@ -406,9 +393,7 @@ body {
     display: flex;
     gap: 30px;
     justify-content: flex-start;
-    align-items: flex-start;
     margin-top: 20px;
-    flex-wrap: wrap;
 }
 
 /* General Widget Styles */
@@ -444,7 +429,7 @@ body {
     flex-direction: column;
     gap: 10px;
     overflow-y: auto;
-    max-height: 180px;
+    max-height: 320px;
 }
 
 /* Individual Book Card (Horizontal) */
@@ -534,18 +519,46 @@ body {
 }
 
 /* ====== RESPONSIVE ====== */
-/* Laptop */
+/* Laptops */
+/* Laptops */
 @media (max-width: 1200px) {
     .dashboard {
         grid-template-columns: 1fr;
     }
 
     .sidebar {
+        border-radius: 20px;
+        min-width: 200px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 10px 20px;
+        gap: 10px;
         max-width: 100%;
     }
 
+    .side-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .side-menu a {
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .filter-section {
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+        padding-top: 0;
+        justify-content: center;
+    }
+
     .library-widgets {
-        flex-direction: column;
         gap: 15px;
     }
 
@@ -556,23 +569,31 @@ body {
 
 /* Tablets */
 @media (max-width: 992px) {
+    .dashboard {
+        margin: 140px 20px 0;
+    }
+
     .header {
         padding: 15px;
+        height: 100px;
+        border-radius: 20px;
     }
 
-    .navbar {
-        gap: 20px;
+    .main_header {
+        height: 130px;
     }
 
-    .search-bar {
-        width: 100%;
+    .schedule {
+        margin: 0 20px;
     }
-}
 
-/* Big phone */
-@media (max-width: 768px) {
-    .header {
+    .library-widgets {
         flex-direction: column;
+        gap: 15px;
+    }
+
+    .widget {
+        height: 320px;
     }
 
     .student_name,
@@ -592,8 +613,27 @@ body {
     }
 }
 
+/* Big phones */
+@media (max-width: 768px) {
+    .dashboard {
+        margin-top: 140px;
+    }
+
+    .main_header {
+        height: 140px;
+    }
+
+    .sidebar {
+        padding: 8px 15px;
+    }
+
+    .sidebar .filter-section {
+        padding-top: 0;
+    }
+}
+
 /* Small phones */
-@media (max-width: 480px) {
+@media (max-width: 547px) {
     .header {
         padding: 10px;
     }
@@ -614,13 +654,84 @@ body {
     }
 }
 
-/* === Extra space above sidebar menu === */
-.sidebar .filter-section {
-    padding-top: 25px;
-}
+/* Very small phones (e.g., iPhone SE) */
+@media (max-width: 375px) {
+    .main_header {
+        height: 100px;
+    }
 
-@media (max-width: 768px) {
-    .sidebar .filter-section {
-        padding-top: 35px;
+    .header {
+        padding: 8px 12px;
+        border-radius: 15px;
+        height: 80px;
+    }
+
+    .student_name {
+        font-size: 16px;
+    }
+
+    .student_id {
+        font-size: 12px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+        margin-top: 110px;
+        gap: 12px;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 8px;
+        gap: 6px;
+        border-radius: 15px;
+    }
+
+    .side-menu a {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .schedule-table {
+        min-width: 350px;
+    }
+
+    .schedule-header {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .library-widgets {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .widget {
+        max-width: 100%;
+    }
+
+    .points-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .points-number {
+        font-size: 28px;
+    }
+
+    .points-label {
+        font-size: 11px;
     }
 }

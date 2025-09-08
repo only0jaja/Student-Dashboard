@@ -1,8 +1,6 @@
-
 :root {
     /* ================== Font Family ================== */
     --font-primary: 'Poppins', sans-serif;
-
     /* === Font Sizes === */
     --fs-xs: 12px;
     --fs-sm: 14px;
@@ -11,7 +9,6 @@
     --fs-lg: 24px;
     --fs-xlg: 28px;
     --fs-xl: 32px;
-
     /* ==== Font Weights === */
     --fw-thin: 100;
     --fw-light: 300;
@@ -21,7 +18,6 @@
     --fw-bold: 700;
     --fw-extrabold: 800;
     --fw-black: 900;
-
     /* === Colors === */
     --black: #000000;
     --blue: #0157AE;
@@ -33,48 +29,35 @@
 
 /* === Global styles === */
 body {
-  background-color: var(--white);
-  font-family: "Poppins", sans-serif;
-  color: var(--black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
-
 
 *.main_header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 170px; 
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 5;
-
-/*
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 87%, rgba(0,0,0,0) 100%);
-  mask-repeat: no-repeat;
-  mask-size: 100% 100%;
-*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 5;
 }
-
-
-
 
 .header {
     position: fixed;
-    top: 20px;         
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 1400px; 
+    width: 100%;
+    max-width: 1400px;
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -84,12 +67,11 @@ body {
     background-color: var(--blue);
     box-sizing: border-box;
 }
-
 /* --------LEFT SECTION-------- */
 .l-section {
     display: flex;
     align-items: center;
-    gap: 12px; 
+    gap: 12px;
 }
 
 .student_name {
@@ -97,19 +79,17 @@ body {
     font-weight: var(--fw-extrabold);
     color: var(--white);
     text-decoration: none;
-    
 }
-.student-name{
+
+.student-name {
     display: flex;
     flex-direction: column;
 }
-
 .student_id {
     font-size: 20px;
     font-weight: var(--fw-extrabold);
     color: var(--white);
     text-decoration: none;
-    
 }
 
 .profile-pic-header {
@@ -123,10 +103,11 @@ body {
     margin-right: 10px;
     z-index: 20;
 }
+
 .profile-initial-circle {
     width: 100px;
     height: 100px;
-    background-color: #000000; 
+    background-color: #000000;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -138,22 +119,22 @@ body {
     user-select: none;
     z-index: 20;
 }
+
 /* --------RIGHT SECTION-------- */
 .navbar {
     display: flex;
     align-items: center;
     gap: 50px;
 }
-
 .search-bar {
     display: flex;
     align-items: center;
     background: white;
     border-radius: 50px;
     border: none;
-    width: 400px;   
+    width: 400px;
     max-width: 100%;
-    padding: 5px;   
+    padding: 5px;
     box-sizing: border-box;
 }
 
@@ -167,32 +148,29 @@ body {
 
 .search-bar button {
     border: none;
-    width: 45px;       
+    width: 45px;
     height: 45px;
-    margin-left: 8px;  
+    margin-left: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     color: var(--blue);
-    font-size: 20px;   
+    font-size: 20px;
     border-radius: 50%;
     background: transparent;
     transition: background 0.3s ease, color 0.3s ease;
 }
-
 .search-bar button:hover {
     background: var(--blue);
     color: var(--white);
 }
-
 /* ===  Settings dropdown === */
 .account-dropdown {
     position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
-
 }
 
 .account-dropdown-content {
@@ -214,19 +192,17 @@ body {
     z-index: 10;
     overflow: hidden;
 }
-
 .account-dropdown:hover .account-dropdown-content {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
-    
-}   
-.account-dropdown-content a:hover{
+}
+
+.account-dropdown-content a:hover {
     background: #007bff;
     color: var(--yellow);
     width: 100%;
 }
-
 .account-dropdown-content a {
     color: var(--white);
     padding: 8px 16px;
@@ -239,29 +215,27 @@ body {
     position: relative;
     transition: color 0.3s ease;
 }
-
 .account-dropdown-content a:hover::after {
     width: 100%;
 }
 
-/* Hide logout link when not logged in */
 .account-dropdown-content .logout {
     display: block;
 }
+
 .account-dropdown-content .login {
     display: none;
 }
 
-/* Show login link when not logged in */
 .account-dropdown-content.logged-out .logout {
     display: none;
 }
+
 .account-dropdown-content.logged-out .login {
     display: block;
 }
 
-
-.settings{
+.settings {
     justify-content: center;
     align-items: center;
     font-weight: 700;
@@ -269,94 +243,99 @@ body {
     cursor: pointer;
     user-select: none;
     z-index: 20;
-
 }
 
 /* === Dashboard layout === */
 .dashboard {
-  background-color: var(--white);
-  margin-top: 180px;
-  width: 1400px;
-  height: auto;
-  border: 2px solid white;
+    background-color: var(--white);
+    margin-top: 180px;
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    border: 2px solid white;
 
-  display: grid;
-  grid-template-columns: 250px 1fr; 
-  grid-template-rows: auto 1fr auto;
-  gap: 20px;
-  border-radius: 20px;
-  box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
 }
 
 /* === Sidebar === */
 .sidebar {
-  width: 250px;
-  background-color: var(--blue);
-  color: var(--black);
-  padding: 20px;
-  border-radius: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  height: 900px;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    width: 100%;
+    max-width: 250px;
+    background-color: var(--blue);
+    color: var(--black);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .side-menu a {
-  display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  margin: 5px 0;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 8px;
-  transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .side-menu a i {
-  margin-right: 10px;
-  font-size: 18px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    font-size: 18px;
 }
+
 .side-menu a:hover {
-  background: #007bff;
-  color: var(--yellow);
+    background: #007bff;
+    color: var(--yellow);
 }
 
 .filter-apply-btn {
-  font-size: var(--fs-sm);
-  padding: 10px;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s;
+    font-size: var(--fs-sm);
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
 }
 
 .filter-apply-btn:hover {
-  background-color: #00bcd4cc; 
-  border: none;
-  
+    background-color: #00bcd4cc;
+    border: none;
 }
 
 /* --------------- MAIN SECTION ---------------*/
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* --------------- Schedule ---------------*/
 
 .schedule-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 100%;
-      overflow: hidden;
-      height: 390px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow: hidden;
+    height: auto;
 }
 
 .schedule-header {
@@ -371,7 +350,6 @@ body {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-
 .schedule-header .view-all {
     font-size: 14px;
     font-weight: 600;
@@ -382,176 +360,204 @@ body {
 }
 
 .schedule-table-container {
-    max-height: 330px; 
-    overflow-y: auto; 
+    max-height: 330px;
+    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
-    overflow-y: auto;
+    min-width: 600px;
 }
 
-.schedule-table th, .schedule-table td {
+.schedule-table th,
+.schedule-table td {
     text-align: left;
     padding: 10px 20px;
     font-size: 13px;
     color: #0C1E33;
 }
-
 .schedule-table th {
     color: #495D72;
     font-weight: 600;
     background: #f9fafb;
 }
-
 .schedule-table tr:nth-child(even) td {
     background: #F4F6F7;
 }
 
 /* --------------- Books and Library Points ---------------*/
 .library-widgets {
-  display: flex;
-  gap: 30px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    margin-top: 20px;
 }
 
 /* General Widget Styles */
 .widget {
-  position: relative;
-  width: 530px;
-  height: 247px; /* fixed height for scrollable effect */
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 530px;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
 .widget .header-box {
-  width: 100%;
-  background: #0157AE;
-  color: #FFD700;
-  font-family: Poppins, sans-serif;
-  font-weight: 800;
-  font-size: 16px;
-  padding: 10px 0;
-  text-align: center;
+    width: 100%;
+    background: #0157AE;
+    color: #FFD700;
+    font-family: Poppins, sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 10px 0;
+    text-align: center;
 }
 
 /* Borrowed Books Column */
 .borrowed .content {
-  padding: 10px 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px; 
-  overflow-y: auto; 
-  max-height: 180px; 
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 320px;
 }
-
 
 /* Individual Book Card (Horizontal) */
 .book-card {
-  background: #fff;
-  border: 2px solid #0157AE;
-  border-radius: 12px;
-  padding: 12px;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  gap: 10px;
+    background: #fff;
+    border: 2px solid #0157AE;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 .book-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .book-title {
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #0C1E33;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #0C1E33;
 }
 
 .book-status {
-  font-size: 10px;
-  font-weight: 600;
-  padding: 3px 6px;
-  border-radius: 4px;
-  width: fit-content;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 6px;
+    border-radius: 4px;
+    width: fit-content;
 }
 
 .book-status.not-submitted {
-  background: #FFEBDB;
-  color: #F2994A;
+    background: #FFEBDB;
+    color: #F2994A;
 }
 
 .book-status.submitted {
-  background: #DFF2E1;
-  color: #27AE60;
+    background: #DFF2E1;
+    color: #27AE60;
 }
 
 .book-dates {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: right;
 }
 
 .book-dates span {
-  font-size: 10px;
-  font-weight: 400;
-  color: #0C1E33;
+    font-size: 10px;
+    font-weight: 400;
+    color: #0C1E33;
 }
 
 /* Library Points */
 .points .content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .points-circle {
-  width: 120px;
-  height: 120px;
-  background: #0157AE;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
+    width: 120px;
+    height: 120px;
+    background: #0157AE;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 .points-number {
-  font-size: 50px;
-  font-weight: 700;
+    font-size: 50px;
+    font-weight: 700;
 }
 
 .points-label {
-  font-size: 16px;
-  font-weight: 800;
+    font-size: 16px;
+    font-weight: 800;
 }
+
 /* ====== RESPONSIVE ====== */
-/* Laptop */
+/* Laptops */
+/* Laptops */
 @media (max-width: 1200px) {
     .dashboard {
         grid-template-columns: 1fr;
     }
 
     .sidebar {
+        border-radius: 20px;
+        min-width: 200px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 10px 20px;
+        gap: 10px;
         max-width: 100%;
     }
 
+    .side-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .side-menu a {
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .filter-section {
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: auto;
+        padding-top: 0;
+        justify-content: center;
+    }
+
     .library-widgets {
-        flex-direction: column;
         gap: 15px;
     }
 
@@ -562,23 +568,31 @@ body {
 
 /* Tablets */
 @media (max-width: 992px) {
+    .dashboard {
+        margin: 140px 20px 0;
+    }
+
     .header {
         padding: 15px;
+        height: 100px;
+        border-radius: 20px;
     }
 
-    .navbar {
-        gap: 20px;
+    .main_header {
+        height: 130px;
     }
 
-    .search-bar {
-        width: 100%;
+    .schedule {
+        margin: 0 20px;
     }
-}
 
-/* Big phone */
-@media (max-width: 768px) {
-    .header {
+    .library-widgets {
         flex-direction: column;
+        gap: 15px;
+    }
+
+    .widget {
+        height: 320px;
     }
 
     .student_name,
@@ -598,8 +612,27 @@ body {
     }
 }
 
+/* Big phones */
+@media (max-width: 768px) {
+    .dashboard {
+        margin-top: 140px;
+    }
+
+    .main_header {
+        height: 140px;
+    }
+
+    .sidebar {
+        padding: 8px 15px;
+    }
+
+    .sidebar .filter-section {
+        padding-top: 0;
+    }
+}
+
 /* Small phones */
-@media (max-width: 480px) {
+@media (max-width: 547px) {
     .header {
         padding: 10px;
     }
@@ -620,13 +653,84 @@ body {
     }
 }
 
-/* === Extra space above sidebar menu === */
-.sidebar .filter-section {
-    padding-top: 25px;
-}
+/* Very small phones (e.g., iPhone SE) */
+@media (max-width: 375px) {
+    .main_header {
+        height: 100px;
+    }
 
-@media (max-width: 768px) {
-    .sidebar .filter-section {
-        padding-top: 35px;
+    .header {
+        padding: 8px 12px;
+        border-radius: 15px;
+        height: 80px;
+    }
+
+    .student_name {
+        font-size: 16px;
+    }
+
+    .student_id {
+        font-size: 12px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+        margin-top: 110px;
+        gap: 12px;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 8px;
+        gap: 6px;
+        border-radius: 15px;
+    }
+
+    .side-menu a {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .schedule-table {
+        min-width: 350px;
+    }
+
+    .schedule-header {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .library-widgets {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .widget {
+        max-width: 100%;
+    }
+
+    .points-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .points-number {
+        font-size: 28px;
+    }
+
+    .points-label {
+        font-size: 11px;
     }
 }

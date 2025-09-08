@@ -657,7 +657,7 @@ body {
     }
 }
 
-/* Very small phones (e.g., iPhone SE) */
+/* Very small phones */
 @media (max-width: 375px) {
     .main_header {
         height: 100px;
@@ -697,7 +697,7 @@ body {
     }
 
     .side-menu a {
-        font-size: 12px;
+        font-size: 8px;
         padding: 6px 8px;
     }
 
@@ -738,4 +738,5 @@ body {
         font-size: 11px;
     }
 }
+
 

@@ -324,10 +324,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 
-/* --------------- Schedule ---------------*/
+/* --------------- Top Section ---------------*/
+.top-section {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 395px;
+}
 
+/* --------------- Schedule Card ---------------*/
 .schedule-card {
     background: white;
     border-radius: 10px;
@@ -335,6 +344,7 @@ body {
     max-width: 100%;
     overflow: hidden;
     height: auto;
+    flex: 0 0 70%;
 }
 
 .schedule-header {
@@ -384,6 +394,93 @@ body {
 }
 .schedule-table tr:nth-child(even) td {
     background: #F4F6F7;
+}
+/* --------------- Widget Payment ---------------*/
+/* Payments Widget */
+.payment .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    flex: 0 0 30%;
+}
+
+/* Balance Circle */
+.payment-circle {
+    width: 150px;
+    height: 150px;
+    background: #0157AE;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFD700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.payment-amount {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Poppins, sans-serif;
+}
+
+.payment-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Payment Info */
+.payment-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-family: Poppins, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0C1E33;
+}
+
+.payment-status {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 10px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.payment-status.unpaid {
+    background: #ffe0db;
+    color: #f00c00;
+}
+
+.payment-status.paid {
+    background: #DFF2E1;
+    color: #27AE60;
+}
+.pay-btn {
+  background: var(--blue);
+  border: none;
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  height: 35px;
+  width: 100%;
+  max-width: auto;
+}
+.pay-btn:hover {
+    background: #007bff;
+    color: var(--yellow);
 }
 
 /* --------------- Books and Library Points ---------------*/

@@ -57,7 +57,7 @@ include 'db.php';
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- ======================= Global CSS ======================= -->
-  <link rel="stylesheet" href="dashboard_1.css">
+  <link rel="stylesheet" href="dashboard.css">
   <!-- ======================= Scroll Animation ======================= -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
 
@@ -99,10 +99,6 @@ echo '
       <div class="r-section">
         <nav class="navbar">
           <!-- Search bar -->
-          <form class="search-bar" action="search.php" method="get">
-            <input type="text" name="q" placeholder="Search..." required>
-            <button type="submit"><i class="fa-solid fa-search"></i></button>
-          </form>
 
           <!-- Account dropdown -->
           <div class="account-dropdown">
@@ -142,63 +138,74 @@ echo '
     <div class="main">
 
       <!-- ======================= Schedule Table ======================= -->
-      <div class="schedule" data-aos="zoom-in" data-aos-delay="150">
-        <div class="schedule-card">
-          <div class="schedule-header">
-            <span>Schedule</span>
-            <span class="view-all">View all ➔</span>
+      <div class="main-content" data-aos="zoom-in" data-aos-delay="150">
+        <div class="top-section">
+          <div class="schedule-card">
+            <div class="schedule-header">
+              <span>Schedule</span>
+              <span class="view-all">View all ➔</span>
+            </div>
+
+            <div class="schedule-table-container">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Room</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <?php
+                    // Fetch courses from database
+                    /*
+                    $sql_courses = "SELECT * FROM courses WHERE student_id = ? ORDER BY id ASC";
+                    $stmt = $conn->prepare($sql_courses);
+                    $stmt->bind_param("s", $student_id);
+                    $stmt->execute();
+                    $courses_result = $stmt->get_result();
+                    */
+
+                    $sql = "SELECT * FROM courses ORDER BY id ASC";
+                    $courses_result = $conn->query($sql);
+
+                    if ($courses_result->num_rows > 0) {
+                        while($row = $courses_result->fetch_assoc()){
+                          // Handle empty fields with TBD
+                          $day = !empty($row['day']) ? htmlspecialchars($row['day']) : 'TBD';
+                          $course_time = !empty($row['course_time']) ? date("h:i A", strtotime($row['course_time'])) : 'TBD';
+                          $room = !empty($row['room']) ? htmlspecialchars($row['room']) : 'TBD';
+                          
+                          echo "<tr>";
+                          echo "<td>".htmlspecialchars($row['course_name'])."</td>";
+                          echo "<td>$day</td>";
+                          echo "<td>$course_time</td>";
+                          echo "<td>$room</td>";
+                          echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='6'>No courses found</td></tr>";
+                    }
+                  ?>
+                </tbody>
+              </table>
+            </div>
           </div>
-
-          <div class="schedule-table-container">
-            <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th>Course Code</th>
-                  <th>Course</th>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th>Instructor</th>
-                  <th>Room</th>
-                </tr>
-              </thead>
-              
-              <tbody>
-                <?php
-                  // Fetch courses from database
-                  /*
-                  $sql_courses = "SELECT * FROM courses WHERE student_id = ? ORDER BY id ASC";
-                  $stmt = $conn->prepare($sql_courses);
-                  $stmt->bind_param("s", $student_id);
-                  $stmt->execute();
-                  $courses_result = $stmt->get_result();
-                  */
-
-                  $sql = "SELECT * FROM courses ORDER BY id ASC";
-                  $courses_result = $conn->query($sql);
-
-                  if ($courses_result->num_rows > 0) {
-                      while($row = $courses_result->fetch_assoc()){
-                        // Handle empty fields with TBD
-                        $day = !empty($row['day']) ? htmlspecialchars($row['day']) : 'TBD';
-                        $course_time = !empty($row['course_time']) ? date("h:i A", strtotime($row['course_time'])) : 'TBD';
-                        $instructor = !empty($row['instructor']) ? htmlspecialchars($row['instructor']) : 'TBD';
-                        $room = !empty($row['room']) ? htmlspecialchars($row['room']) : 'TBD';
-                        
-                        echo "<tr>";
-                        echo "<td>".htmlspecialchars($row['course_code'])."</td>";
-                        echo "<td>".htmlspecialchars($row['course_name'])."</td>";
-                        echo "<td>$day</td>";
-                        echo "<td>$course_time</td>";
-                        echo "<td>$instructor</td>";
-                        echo "<td>$room</td>";
-                        echo "</tr>";
-                      }
-                  } else {
-                      echo "<tr><td colspan='6'>No courses found</td></tr>";
-                  }
-                ?>
-              </tbody>
-            </table>
+          <div class="widget payment" data-aos="zoom-in" data-aos-delay="100">
+            <div class="header-box">PAYMENTS</div>
+            <div class="content">
+              <div class="payment-circle">
+                <div class="payment-amount">₱5,000</div>
+                <div class="payment-label">Balance for Sept 2025</div>
+              </div>
+              <div class="payment-info">
+                <p>Due Date: Sept 30, 2025</p>
+                <div class="payment-status unpaid">Unpaid</div>
+              </div>
+              <button class="pay-btn">Pay Now</button>
+            </div>
           </div>
         </div>
 

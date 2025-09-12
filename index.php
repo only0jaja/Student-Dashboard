@@ -8,7 +8,7 @@ include 'db.php';
   session_start();
   include 'db.php';
 
-  // Example: check if user is logged in
+  // Check if user is logged in
   if(!isset($_SESSION['student_id'])){
       header("Location: login.php");
       exit;
@@ -58,6 +58,8 @@ include 'db.php';
 
   <!-- ======================= Global CSS ======================= -->
   <link rel="stylesheet" href="dashboard_1.css">
+  <!-- ======================= Scroll Animation ======================= -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
 
   <title>Student Dashboard</title>
 </head>
@@ -66,6 +68,7 @@ include 'db.php';
 
   <!-- ======================= Header Section ======================= -->
 <?php
+      // Temporary without session
       $student_name = "John Doe";
       $student_id = "000000";
       $profile_pic = "uploads/default_profile.jpg";
@@ -139,7 +142,7 @@ echo '
     <div class="main">
 
       <!-- ======================= Schedule Table ======================= -->
-      <div class="schedule">
+      <div class="schedule" data-aos="zoom-in" data-aos-delay="150">
         <div class="schedule-card">
           <div class="schedule-header">
             <span>Schedule</span>
@@ -204,7 +207,7 @@ echo '
         <div class="library-widgets">
 
           <!-- Borrowed Books -->
-          <div class="widget borrowed">
+          <div class="widget borrowed" data-aos="zoom-in" data-aos-delay="150">
             <div class="header-box">BORROWED BOOKS</div>
             <div class="content borrowed-column scrollable">
               <?php
@@ -242,7 +245,7 @@ echo '
           </div>
 
           <!-- Library Points -->
-          <div class="widget points">
+          <div class="widget points" data-aos="zoom-in" data-aos-delay="150">
             <div class="header-box">LIBRARY POINTS</div>
             <div class="content">
               <div class="points-circle">
@@ -270,6 +273,9 @@ echo '
     </div> <!-- end main -->
 
   </section> <!-- end dashboard -->
+
+  <!--===== JAVA SCRIPT =====-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 </html>

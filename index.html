@@ -16,6 +16,8 @@
     <!--=== Global Css ===-->
     <link rel="stylesheet" href="dashboard.css">
 
+    <!--=== AOS Library ===-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <title>Student Dashboard</title>
   
@@ -78,7 +80,7 @@
     <!-- Main Content -->
     <div class="main">
       <div class="schedule">
-        <div class="schedule-card">
+        <div class="schedule-card" data-aos="zoom-in" data-aos-delay="200">
           <div class="schedule-header">
             <span>Schedule</span>
             <span class="view-all">View all ➔</span>
@@ -173,7 +175,7 @@
           </div>
         </div>
         <!-- Library Widgets  -->
-        <div class="library-widgets"> 
+        <div class="library-widgets" data-aos="zoom-in" data-aos-delay="200"> 
         <!-- Borrowed Books -->
           <div class="widget borrowed">
             <div class="header-box">BORROWED BOOKS</div>
@@ -233,7 +235,7 @@
           </div>
 
           <!-- Library Points -->
-          <div class="widget points">
+          <div class="widget points" data-aos="zoom-in" data-aos-delay="200">
             <div class="header-box">LIBRARY POINTS</div>
             <div class="content">
               <div class="points-circle">
@@ -247,5 +249,7 @@
   </div>
 
   </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

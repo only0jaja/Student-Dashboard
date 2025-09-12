@@ -75,7 +75,7 @@ include 'db.php';
 
 echo '
   <header class="main_header"> 
-    <div class="header">
+    <div class="header" data-aos="fade-down" data-aos-delay="100">
       <div class="l-section">
         <a href="index.php" class="profile-initial-circle">
           <img src="' . htmlspecialchars($profile_pic) . '" alt="Profile Picture" style="width:40px; height:40px; border-radius:50%;">
@@ -276,6 +276,16 @@ echo '
 
   <!--===== JAVA SCRIPT =====-->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init({
+        once: true,    
+
+      });
+      document.querySelectorAll('.widget').forEach(el => {
+        el.classList.add('aos-animate');
+      });
+
+  </script>
 
 </body>
 </html>

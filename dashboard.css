@@ -65,6 +65,7 @@ body {
     border-radius: 30px;
     background-color: var(--blue);
     box-sizing: border-box;
+    margin-left: 30px;
 }
 /* --------LEFT SECTION-------- */
 .l-section {

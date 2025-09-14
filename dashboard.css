@@ -587,11 +587,6 @@ body {
         margin: 0 20px;
     }
 
-    .library-widgets {
-        flex-direction: column;
-        gap: 15px;
-    }
-
     .widget {
         height: 320px;
     }
@@ -625,13 +620,17 @@ body {
     .main_header {
         height: 140px;
     }
-
+    
     .sidebar {
         padding: 8px 15px;
     }
 
     .sidebar .filter-section {
         padding-top: 0;
+    }
+    .library-widgets {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 

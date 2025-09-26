@@ -123,7 +123,6 @@ echo '
     <!-- ====================== Sidebar / Navigation ======================= -->
     <aside class="sidebar" data-aos="fade-right">
       <section class="filter-section">
-        <h4 style="margin-bottom: 10px;">Categories</h4>
         <nav class="side-menu">
           <a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
           <a href="library.html"><i class="fa-solid fa-book"></i> Library</a>

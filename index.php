@@ -73,73 +73,83 @@ include 'db.php';
       $student_id = "000000";
       $profile_pic = "uploads/default_profile.jpg";
 
-echo '
-  <header class="main_header"> 
-    <div class="header" data-aos="fade-down" data-aos-delay="100">
-      <div class="l-section">
-        <a href="index.php" class="profile-initial-circle">
-          <img src="' . htmlspecialchars($profile_pic) . '" alt="Profile Picture" style="width:40px; height:40px; border-radius:50%;">
+      echo '
+        <header class="main_header"> 
+          <div class="header">
+            <div class="l-section">
+              <a href="index.php" class="profile-initial-circle">
+                <img src="' . htmlspecialchars($profile_pic) . '" alt="Profile Picture" style="width:40px; height:40px; border-radius:50%;">
 
-          <!-- For Session
-          <img src="<?php echo htmlspecialchars($profile_pic); ?>" alt="Profile Picture" style="width:40px; height:40px; border-radius:50%;">
-          -->
-        </a>
-        <div class="student-name">
-          <a class="student_name">' . htmlspecialchars($student_name) . '</a>
-          <a class="student_id">' . htmlspecialchars($student_id) . '</a>
+                <!-- For Session
+                <img src="<?php echo htmlspecialchars($profile_pic); ?>" alt="Profile Picture" style="width:40px; height:40px; border-radius:50%;">
+                -->
+              </a>
+              <div class="student-name">
+                <a class="student_name">' . htmlspecialchars($student_name) . '</a>
+                <a class="student_id">' . htmlspecialchars($student_id) . '</a>
 
 
-          <!-- For Session
-          <a class="student_name"><?php echo htmlspecialchars($student_name); ?></a>
-          <a class="student_id"><?php echo htmlspecialchars($student_id); ?></a>
-          -->
-          
-        </div>
-      </div>
-      <div class="r-section">
-        <nav class="navbar">
-          <!-- Search bar -->
+                <!-- For Session
+                <a class="student_name"><?php echo htmlspecialchars($student_name); ?></a>
+                <a class="student_id"><?php echo htmlspecialchars($student_id); ?></a>
+                -->
+                
+              </div>
+            </div>
+            <div class="r-section">
+              <nav class="navbar">
+                <div class="account-dropdown">
+                  <div class="language"><i class="fa-solid fa-globe"></i></div>
 
-          <!-- Account dropdown -->
-          <div class="account-dropdown">
-            <div class="settings">⚙️</div>
-            <div class="account-dropdown-content">
-              <a href="accountpage.php">My Profile</a>
-              <a href="#">Settings</a>
-              <a href="logout.php">Logout</a>
+                  <div class="language-dropdown-content">
+                    <a href="">Spanish</a>
+                    <a href="">English</a>
+                    <a href="">Filipino</a>
+                  </div>
+                </div>
+                <div class="account-dropdown">
+                  <div class="settings"><i class="fa-solid fa-gear"></i></div>
+
+                  <div class="account-dropdown-content">
+                    <a href="accountpage.php">My Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="logout.php">Logout</a>
+                  </div>
+                </div>
+                <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+              </nav>
             </div>
           </div>
-        </nav>
-      </div>
-    </div>
-  </header>';
+        </header>';
 ?>
 
   
 
-  <!-- ======================= Dashboard Section   ======================= -->
+  <!-- === Dashboard Section === -->
   <section class="dashboard">
-
-    <!-- ====================== Sidebar / Navigation ======================= -->
-    <aside class="sidebar" data-aos="fade-right">
-      <section class="filter-section">
-        <nav class="side-menu">
-          <a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
-          <a href="library.html"><i class="fa-solid fa-book"></i> Library</a>
-          <a href="payment.html"><i class="fa-solid fa-credit-card"></i> Payment</a>
-          <a href="application.html"><i class="fa-solid fa-file-alt"></i> Application</a>
-        </nav>
-      </section>
+    <!-- === Sidebar / Navigation === -->
+    <aside class="sidebar">
+        <!-- Categories -->
+        <section class="filter-section">
+          <nav class="side-menu">
+            <a href="index.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+            <a href="library.html"><i class="fa-solid fa-book"></i> Library</a>
+            <a href="payment.html"><i class="fa-solid fa-credit-card"></i> Payment</a>
+            <a href="application.html"><i class="fa-solid fa-file-lines"></i> Application</a>
+            <a href="rewards.html"><i class="fa-solid fa-gift"></i> Rewards</a>
+            <a href="qr.html"><i class="fa-solid fa-qrcode"></i> QR</a>
+          </nav>
+        </section>
     </aside>
 
 
-    <!-- ======================= Main Content ======================= -->
+    <!-- === Main Content === -->
     <div class="main">
 
-      <!-- ======================= Schedule Table ======================= -->
+      <!-- === Schedule Table === -->
       <div class="main-content" data-aos="zoom-in" data-aos-delay="150">
         <div class="top-section">
-          <div class="schedule-card">
+          <div class="schedule-card" data-aos="zoom-in" data-aos-delay="100">
             <div class="schedule-header">
               <span>Schedule</span>
               <span class="view-all">View all ➔</span>
@@ -192,24 +202,10 @@ echo '
               </table>
             </div>
           </div>
-          <div class="widget payment" data-aos="zoom-in" data-aos-delay="100">
-            <div class="header-box">PAYMENTS</div>
-            <div class="content">
-              <div class="payment-circle">
-                <div class="payment-amount">₱5,000</div>
-                <div class="payment-label">Balance for Sept 2025</div>
-              </div>
-              <div class="payment-info">
-                <p>Due Date: Sept 30, 2025</p>
-                <div class="payment-status unpaid">Unpaid</div>
-              </div>
-              <button class="pay-btn">Pay Now</button>
-            </div>
-          </div>
         </div>
+                    
 
-
-        <!-- ======================= Library Widgets ======================= -->
+        <!-- === Library Widgets === -->
         <div class="library-widgets">
 
           <!-- Borrowed Books -->
@@ -250,24 +246,64 @@ echo '
             </div>
           </div>
 
-          <!-- Library Points -->
-          <div class="widget points" data-aos="zoom-in" data-aos-delay="150">
+          <!--=== Library Points ===-->
+          <?php
+            // Get total points
+            /*
+            $sql_points = "SELECT SUM(points) AS total_points FROM library_points WHERE student_id = ?";
+            $stmt_points = $conn->prepare($sql_points);
+            $stmt_points->bind_param("s", $student_id);
+            $stmt_points->execute();
+            $points_result = $stmt_points->get_result();
+            */
+
+            $sql_points = "SELECT SUM(points) AS total_points FROM library_points";
+            $points_result = $conn->query($sql_points);
+
+            $total_points = 0;
+            if($points_result->num_rows > 0){
+                $row = $points_result->fetch_assoc();
+                $total_points = $row['total_points'] ? $row['total_points'] : 0;
+            }
+
+            // Get new points
+            /*
+            $sql_transactions = "SELECT * FROM library_points WHERE student_id = ? ORDER BY created_at DESC";
+            $stmt_transactions = $conn->prepare($sql_transactions);
+            $stmt_transactions->bind_param("s", $student_id);
+            $stmt_transactions->execute();
+            $transactions = $stmt_transactions->get_result();
+            */
+
+            $sql_transactions = "SELECT * FROM library_points ORDER BY created_at DESC LIMIT 10";
+            $transactions = $conn->query($sql_transactions);
+          ?>
+          <div class="widget points" data-aos="zoom-in" data-aos-delay="100">
             <div class="header-box">LIBRARY POINTS</div>
             <div class="content">
+              <!--  Display Points-->
               <div class="points-circle">
-                <?php
-                  $student_id = '23-394-51';
-                  $sql_points = "SELECT library_points FROM students WHERE student_id='$student_id'";
-                  $points_result = $conn->query($sql_points);
-
-                  $points = 0;
-                  if($points_result->num_rows > 0){
-                      $row = $points_result->fetch_assoc();
-                      $points = $row['library_points'];
-                  }
-                ?>
-                <div class="points-number"><?php echo $points; ?></div>
+                <div class="points-number"><?php echo $total_points; ?></div>
                 <div class="points-label">PTS</div>
+              </div>
+              <!--  Points History-->
+              <div class="points-info">
+                <?php if ($transactions->num_rows > 0): ?>
+                  <?php while($row = $transactions->fetch_assoc()): ?>
+                    <div class="points-card">
+                      <div class="points-num">
+                        <div class="points-add">
+                          <?php echo ($row['points'] > 0 ? '+' : '') . $row['points']; ?>
+                        </div>
+                      </div>
+                      <div class="points-dates">
+                        <span><?php echo date("M d, Y", strtotime($row['created_at'])); ?></span>
+                      </div>
+                    </div>
+                  <?php endwhile; ?>
+                <?php else: ?>
+                  <p>No points history yet.</p>
+                <?php endif; ?>
               </div>
             </div>
           </div>
@@ -280,16 +316,48 @@ echo '
 
   </section> <!-- end dashboard -->
 
-  <!--===== JAVA SCRIPT =====-->
+  <!--=== JAVA SCRIPT ===-->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-      AOS.init({
-        once: true,    
+    AOS.init({
+      once: true,
+    });
 
+    document.querySelectorAll('.widget').forEach(el => {
+      el.classList.add('aos-animate');
+    });
+
+    // Sidebar toggle
+    function toggleSidebar() {
+      document.querySelector(".sidebar").classList.toggle("show");
+    }
+
+    // Close dropdowns
+    function closeAllDropdowns() {
+      document.querySelectorAll(".account-dropdown-content, .language-dropdown-content").forEach(el => {
+        el.classList.remove("show");
       });
-      document.querySelectorAll('.widget').forEach(el => {
-        el.classList.add('aos-animate');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdowns = document.querySelectorAll(".account-dropdown");
+
+      dropdowns.forEach(dropdown => {
+        const content = dropdown.querySelector(".account-dropdown-content, .language-dropdown-content");
+
+        dropdown.addEventListener("click", (e) => {
+          e.stopPropagation(); 
+          closeAllDropdowns(); 
+          content.classList.toggle("show");
+        });
       });
+
+      // Close all 
+      document.addEventListener("click", () => {
+        closeAllDropdowns();
+      });
+    });
+
 
   </script>
 

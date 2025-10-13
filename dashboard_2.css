@@ -613,8 +613,8 @@ body{
 /* -------------------------
    Misc / small components
 ------------------------- */
-.widget.payment { /* ensure same widget base is used */ }
-.schedule { /* legacy selector preserved if used */ }
+.widget.payment { }
+.schedule { }
 
 /* -------------------------
    Responsive
